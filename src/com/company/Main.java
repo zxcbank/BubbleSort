@@ -45,14 +45,13 @@ public class Main extends JPanel{
 
     public void paintComponent( Graphics g ){
         super.paintComponent(g);
-        g.setColor(Color.black);
         for (int i = 0; i < mass.length; i++){
+            g.setColor(new Color(255 - i,i,0));
             if (i == j){
-                g.setColor(Color.RED);
+                g.setColor(Color.BLACK);
                 g.fillRect(i * 10 + 10,1000 - mass[i], 10, mass[i]);
             }
             g.fillRect(i * 10 + 10,1000 - mass[i], 10, mass[i]);
-            g.setColor(Color.black);
         }
 
 
