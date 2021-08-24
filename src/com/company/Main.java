@@ -16,7 +16,7 @@ public class Main extends JPanel{
         fr.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         fr.setVisible(true);
         for (int i = 0; i < mass.length; i++)
-            mass[i] =  new Random().nextInt(975);
+            mass[i] =  new Random().nextInt(255);
     }
 
     public static void main(String[] args) {
@@ -46,12 +46,12 @@ public class Main extends JPanel{
     public void paintComponent( Graphics g ){
         super.paintComponent(g);
         for (int i = 0; i < mass.length; i++){
-            g.setColor(new Color(255 - i,i,0));
+            g.setColor(new Color(mass[i], 0, 255 - mass[i]));
             if (i == j){
                 g.setColor(Color.BLACK);
-                g.fillRect(i * 10 + 10,1000 - mass[i], 10, mass[i]);
+                g.fillRect(i * 10 + 10,1000 - mass[i] * 4, 10, mass[i] * 4);
             }
-            g.fillRect(i * 10 + 10,1000 - mass[i], 10, mass[i]);
+            g.fillRect(i * 10 + 10,1000 - mass[i] * 4, 10, mass[i] * 4);
         }
 
 
